@@ -1,0 +1,121 @@
+.subIndexClass {
+    position: fixed;
+    bottom: 0;
+    display: inline-flex;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
+
+}
+
+.SubIndexList {
+    display: inline-flex;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter: blur(10px);
+    height: 120px;
+    flex-shrink: 0;
+    width: fit-content;
+    gap: 24px;
+    align-items: center;
+    overflow: auto;
+    left: 180px;
+    display: inline-flex;
+    animation: 10s slide infinite linear;
+}
+
+.SubIndexList .subIndex {
+    flex-direction: column;
+    display: inline-flex;
+    padding: 10px;
+    width: 170px;
+    gap: 4px;
+}
+
+.subIndex .name {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.356px;
+}
+
+.subIndex .value {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.356px;
+}
+
+.subIndex .change {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.356px;
+}
+
+.SubIndexList .subIndex .data {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.SubIndexList .subIndex .values {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.red {
+    color: #FF452C;
+}
+
+.green {
+    color: #00C48C;
+}
+
+
+
+.pinned {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 205px;
+    height: 120px;
+    padding-top: 32px;
+    padding-left: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: #FF452C;
+    box-sizing: border-box;
+    color: white !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+}
+
+.pinned .name {
+    color: #fff;
+}
+
+.pinned .data {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
