@@ -1,13 +1,14 @@
 import Card from "antd/es/card/Card";
 import './FinancialDashboard.css';
 import { Input, Button } from 'antd';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import LineChart from "./LineChart";
 import { useList } from '../../context/SubIndexContext';
 
 export default function FinancialDashboard() {
     const { subIndices, addItem, removeItem } = useList();
     const [subIndex, setSubIndex] = useState('');
+    const inputRef = useRef(null);
     console.log(subIndices, 'subIndices')
     return (
         <div className="FinancialDashboard">
@@ -22,8 +23,8 @@ export default function FinancialDashboard() {
                             </div>
                         ))}
                         <div className="add-subIndex">
-                            <Input value={subIndex} onChange={(e) => setSubIndex(e.target.value)} type="text" placeholder="Enter SubIndex" />
-                            <Button onClick={() => { addItem(subIndex); setSubIndex('') }}>Add</Button>
+                            <Input ref={inputRef} value={subIndex} onChange={(e) => setSubIndex(e.target.value)} type="text" placeholder="Enter SubIndex" />
+                            <Button onClick={() => { addItem(subIndex); setSubIndex(''); inputRef?.current?.focus() }}>Add</Button>
                         </div>
                     </div>
                 </div>

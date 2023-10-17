@@ -1,9 +1,11 @@
 .subIndexClass {
-    position: fixed;
     bottom: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
     display: inline-flex;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
-
+    position: fixed;
+    width: 85%;
+    float: right;
+    left: 15%;
 }
 
 .SubIndexList {
@@ -117,5 +119,26 @@
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .SubIndexList {
+        animation: 20s slide infinite linear;
+    }
+
+    .pinned {
+        height: 108px;
+        padding-top: 20px;
+        width: 160px;
+    }
+
+    .SubIndexList {
+        height: 108px;
+        gap: 0px;
+    }
+
+    .subIndex {
+        width: 150px !important;
     }
 }
