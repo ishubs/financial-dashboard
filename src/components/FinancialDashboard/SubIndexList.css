@@ -135,8 +135,7 @@
 
     .SubIndexList {
         height: 108px;
-        gap: 0px;
-        overflow: auto;
+        gap: 15px;
         width: fit-content;
     }
 
